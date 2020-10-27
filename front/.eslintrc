@@ -8,10 +8,14 @@
     },
     "parser": "@typescript-eslint/parser",
     "plugins": [
-      "@typescript-eslint/eslint-plugin"
+      "@typescript-eslint/eslint-plugin",
+      "prettier",
     ],
     "extends": [
-      "airbnb-typescript"
+      "airbnb-typescript",
+      "plugin:prettier/recommended",
+      "prettier",
+      "prettier/@typescript-eslint"
     ],
     "parserOptions": {
         "project": "./tsconfig.json"
