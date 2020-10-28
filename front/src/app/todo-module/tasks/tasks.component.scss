@@ -22,6 +22,7 @@
         cursor: move;
         background: white;
         font-size: 14px;
+        user-select: none;
         &:last-child {
           border: none;
         }
