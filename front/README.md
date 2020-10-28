@@ -1,27 +1,33 @@
 # todo front
+Клиентская часть проекта todo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+## Запустить фронт
+Перейти в консоли в папку front. Установить зависимости  командой `npm i`. 
 
-## Development server
+Запустить команду `npm run start`. Эта команда использует прокси для связи с беком. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Настройки прокси находятся в файле front/proxy.conf.json. 
 
-## Code scaffolding
+Стандартный `ng serve` не сработает, так как прокси не подцепит.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Открыть в браузере [Front](https://localhost:4200).
 
-## Build
+## Code style
+- поверить стиль: запустить команду `npm run lint`.
+- исправить стиль: запустить команду `npm run lint-fix`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+В проекте используются EsLint и Prettier. Prettier запускается автоматически с помощью EsLint во время исполнения стиля.
 
-## Running unit tests
+В проекте установлен husky+lint-staged, которые отслеживают pre-commit git'a. Проверка и исправление стиля осуществляются перед каждым коммитом, код не прошедший проверку закоммитить не удастся. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Настройки husky находятся в front/package-json.
 
-## Running end-to-end tests
+## Тесты
+ Запустить `npm run test` 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Стилизация
+UIkit: MaterialUI, тема Deep Purple/Amber, шрифт Roboto, нормализация стилей.
+Препроцессор: SCSS.
+Система наименований классов: БЭМ.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
