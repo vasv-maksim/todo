@@ -1,3 +1,4 @@
+// В этом компоненте глобальные стили
 @import "../../../styles-vars/theme_variables";
 @import "../../../styles-vars/z-indexes";
 @import "../../../styles-vars/pineapple";
@@ -60,5 +61,22 @@
 
   &__content {
     padding: 10px 10px 10px 10px;
+    overflow-x: auto;
   }
+}
+
+// Скроллбар
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px $DarkYellow; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $softPink;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px $DarkYellow; 
 }
