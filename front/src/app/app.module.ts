@@ -7,9 +7,10 @@ import { MaterialModule } from './material-module/material.module';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent],
+  declarations: [AppComponent, TodoComponent, TasksComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
