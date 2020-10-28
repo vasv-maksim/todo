@@ -5,6 +5,7 @@
   z-index: $z-index1;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
  // https://codepen.io/AngelaVelasquez/pen/yVEOpY
   background:
@@ -49,13 +50,14 @@
   top: 20px;
   left: 20px;
 
-  min-width: 400px;
+  min-width: 300px;
   max-width: 900px;
-  min-height: 600px;
+  min-height: 400px;
+  max-height: 700px;
 
-  border: 2px solid $DarkYellow;
+  border: 1px solid $DarkYellow;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px $DarkYellow;
 
   display: flex;
   flex-direction: column;
