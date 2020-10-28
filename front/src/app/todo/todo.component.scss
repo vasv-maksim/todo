@@ -69,11 +69,18 @@
   background-color: #fff;
  
   &__handle {
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    padding: 5px 10px 0 0;
+    justify-content: space-between;
+    padding: 5px 10px 10px 10px;
     cursor: move;
     color: $softPink;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $DarkYellow;
   }
 
   &__content {
