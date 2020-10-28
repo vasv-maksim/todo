@@ -1,9 +1,9 @@
-@import "../../styles-vars/theme_variables";
-@import "../../styles-vars/z-indexes";
-@import "../../styles-vars/pineapple";
+@import "../../../styles-vars/theme_variables";
+@import "../../../styles-vars/z-indexes";
+@import "../../../styles-vars/pineapple";
 
 .boundary {
-  z-index: $z-index1;
+  z-index: $z-index-1;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
