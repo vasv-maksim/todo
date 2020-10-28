@@ -23,7 +23,7 @@
 Настройки husky находятся в front/package-json.
 
 ## Тесты
- Запустить `npm run test` 
+Запустить `npm run test` 
 
 ## Стилизация
 UIkit: MaterialUI, тема Deep Purple/Amber, шрифт Roboto, нормализация стилей.
