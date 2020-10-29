@@ -9,7 +9,6 @@ import { environment } from '../environments/environment';
 import { TodoModule } from './todo-module/todo.module';
 
 import { AppComponent } from './app.component';
-import { appReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,8 +17,11 @@ import { appReducer } from './store/app.reducer';
     AppRoutingModule,
     BrowserAnimationsModule,
     TodoModule,
-    StoreModule.forRoot(appReducer),
-    environment.production ? [] : StoreDevtoolsModule.instrument({}),
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   bootstrap: [AppComponent],
 })

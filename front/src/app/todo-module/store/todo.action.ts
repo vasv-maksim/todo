@@ -1,3 +1,5 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
-export const test = createAction('[App] Test');
+import { Task } from './models';
+
+export const addTaskAction = createAction('[TODO ADD] ADD', props<Task>());

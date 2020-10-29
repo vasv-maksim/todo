@@ -43,6 +43,12 @@
   resize: both;
   overflow: hidden;
   background-color: #fff;
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
  
   &__handle {
     width: 100%;

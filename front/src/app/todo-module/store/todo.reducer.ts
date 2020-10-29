@@ -1,61 +1,61 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, on, Action } from '@ngrx/store';
 
-// import { test } from './todo.action';
+import { addTaskAction } from './todo.action';
 import { Task } from './models';
 
 export const initialState: Task[] = [
   {
-    id: 1,
+    id: 'id1',
     name: 'Найти ананас',
     done: true,
   },
   {
-    id: 2,
+    id: 'id2',
     name: 'Выбрать ананас',
     done: true,
   },
   {
-    id: 3,
+    id: 'id3',
     name: 'Купить ананас',
     done: true,
   },
   {
-    id: 4,
+    id: 'id4',
     name: 'Донести ананас',
     done: false,
   },
   {
-    id: 5,
+    id: 'id5',
     name: 'Положить ананас в холодильник',
     done: false,
   },
   {
-    id: 6,
+    id: 'id6',
     name: 'Достать ананас из холодильника',
     done: false,
   },
   {
-    id: 7,
+    id: 'id7',
     name: 'Почистить ананас',
     done: false,
   },
   {
-    id: 8,
+    id: 'id8',
     name: 'Разрезать ананас',
     done: false,
   },
   {
-    id: 9,
+    id: 'id9',
     name: 'Съесть ананас',
     done: false,
   },
 ];
 
-const _todoReducer = createReducer(
+const todoReducer = createReducer(
   initialState,
-  // on(test, (state) => state),
+  on(addTaskAction, (state: Task[], task: Task) => [...state, task]),
 );
 
-export function todoReducer(state, action) {
-  return _todoReducer(state, action);
+export function reducer(state, action: Action) {
+  return todoReducer(state, action);
 }

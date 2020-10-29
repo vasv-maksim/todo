@@ -7,7 +7,8 @@ import { SharedModule } from '../shared-module/shared.module';
 
 import { TodoComponent } from './todo/todo.component';
 import { TasksComponent } from './tasks/tasks.component';
-import { todoReducer } from './store/todo.reducer';
+import { reducer } from './store/todo.reducer';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
   { path: '', component: TodoComponent },
@@ -15,12 +16,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TodoComponent, TasksComponent],
+  declarations: [TodoComponent, TasksComponent, AddComponent],
   imports: [
     MaterialModule,
     SharedModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature('todo', todoReducer),
+    StoreModule.forFeature('todo', reducer),
   ],
   exports: [TodoComponent],
 })
