@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { MatDialog } from '@angular/material/dialog';
 
-import { v4 as uuid } from 'uuid';
-
-import { addTaskAction } from '../store/todo.action';
+import { AddDialogComponent } from '../add-dialog/add-dialog.component';
 
 @Component({
   selector: 'todo-add',
@@ -11,13 +9,13 @@ import { addTaskAction } from '../store/todo.action';
   styleUrls: ['./add.component.scss'],
 })
 export class AddComponent implements OnInit {
-  constructor(private store: Store) {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   addTask() {
-    this.store.dispatch(
-      addTaskAction({ id: uuid(), name: 'dwqd', done: false }),
-    );
+    this.dialog.open(AddDialogComponent, {
+      width: '450px',
+    });
   }
 }
