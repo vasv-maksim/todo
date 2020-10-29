@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
+import { v4 as uuid } from 'uuid';
+
 import { addTaskAction } from '../store/todo.action';
 
 @Component({
@@ -15,7 +17,7 @@ export class AddComponent implements OnInit {
 
   addTask() {
     this.store.dispatch(
-      addTaskAction({ id: 'd3wdwd', name: 'dwqd', done: false }),
+      addTaskAction({ id: uuid(), name: 'dwqd', done: false }),
     );
   }
 }
