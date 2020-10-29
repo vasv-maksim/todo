@@ -1,63 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
-import { Task } from '../common/models';
+import { selectTodo } from '../store/selectors';
+import { Task } from '../store/models';
 
 @Component({
   selector: 'todo-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss'],
 })
-export class TasksComponent {
-  tasks: Task[] = [
-    {
-      id: 1,
-      name: 'Найти ананас',
-      done: true,
-    },
-    {
-      id: 2,
-      name: 'Выбрать ананас',
-      done: true,
-    },
-    {
-      id: 3,
-      name: 'Купить ананас',
-      done: true,
-    },
-    {
-      id: 4,
-      name: 'Донести ананас',
-      done: false,
-    },
-    {
-      id: 5,
-      name: 'Положить ананас в холодильник',
-      done: false,
-    },
-    {
-      id: 6,
-      name: 'Достать ананас из холодильника',
-      done: false,
-    },
-    {
-      id: 7,
-      name: 'Почистить ананас',
-      done: false,
-    },
-    {
-      id: 8,
-      name: 'Разрезать ананас',
-      done: false,
-    },
-    {
-      id: 9,
-      name: 'Съесть ананас',
-      done: false,
-    },
-  ];
+export class TasksComponent implements OnInit, OnDestroy {
+  tasks: Task[];
 
-  drop(event: CdkDragDrop<Task[]>) {
+  taskSub: Subscription;
+
+  constructor(private store: Store) {}
+
+  ngOnInit() {
+    this.initValues();
+  }
+
+  initValues(): void {
+    this.taskSub = this.store
+      .select(selectTodo)
+      .subscribe((tasks: Task[]) => (this.tasks = tasks));
+  }
+
+  drop(event: CdkDragDrop<Task[]>): void {
     moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
+  }
+
+  ngOnDestroy() {
+    if (this.taskSub) {
+      this.taskSub.unsubscribe();
+    }
   }
 }
