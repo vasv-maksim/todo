@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
@@ -29,13 +28,12 @@ export class TasksComponent implements OnInit, OnDestroy {
       .subscribe((tasks: Task[]) => (this.tasks = tasks));
   }
 
-  drop(event: CdkDragDrop<Task[]>): void {
+  drop(event): void {
     const swapIndexes: SwapIndexes = {
       previous: event.previousIndex,
       current: event.currentIndex,
     };
     this.store.dispatch(dropTaskAction(swapIndexes));
-    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 
   ngOnDestroy() {
