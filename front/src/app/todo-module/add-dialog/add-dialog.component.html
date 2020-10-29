@@ -1,12 +1,14 @@
-<h1 mat-dialog-title>Добавить задачу</h1>
-<div mat-dialog-content>
-  <p>Пожалуйста, введите имя:</p>
-  <mat-form-field>
-    <mat-label>Имя</mat-label>
-    <input matInput [(ngModel)]="taskName">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-    <button mat-button  cdkFocusInitial (click)="addTask()">Ok</button>
-  <button mat-button (click)="cancel()">Отмена</button>
+<div class="dialog">
+    <div class="dialog__title">Добавить задачу</div>
+    <div mat-dialog-content>
+    <p class="dialog__text">Пожалуйста, введите имя:</p>
+    <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input class="dialog__input" matInput [(ngModel)]="taskName">
+    </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="dialog__buttons">
+        <button mat-button  cdkFocusInitial (click)="addTask()">Ok</button>
+        <button mat-button (click)="cancel()">Отмена</button>
+    </div>
 </div>
