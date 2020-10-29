@@ -9,6 +9,7 @@ import { TodoComponent } from './todo/todo.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { reducer } from './store/todo.reducer';
 import { AddComponent } from './add/add.component';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 const routes: Routes = [
   { path: '', component: TodoComponent },
@@ -16,7 +17,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TodoComponent, TasksComponent, AddComponent],
+  declarations: [
+    TodoComponent,
+    TasksComponent,
+    AddComponent,
+    AddDialogComponent,
+  ],
   imports: [
     MaterialModule,
     SharedModule,
