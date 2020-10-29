@@ -4,7 +4,8 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
 import { selectTodo } from '../store/selectors';
-import { Task } from '../store/models';
+import { dropTaskAction } from '../store/todo.action';
+import { Task, SwapIndexes } from '../store/models';
 
 @Component({
   selector: 'todo-tasks',
@@ -29,6 +30,11 @@ export class TasksComponent implements OnInit, OnDestroy {
   }
 
   drop(event: CdkDragDrop<Task[]>): void {
+    const swapIndexes: SwapIndexes = {
+      previous: event.previousIndex,
+      current: event.currentIndex,
+    };
+    this.store.dispatch(dropTaskAction(swapIndexes));
     moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 

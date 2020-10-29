@@ -3,3 +3,8 @@ export interface Task {
   name: string;
   done: boolean;
 }
+
+export interface SwapIndexes {
+  previous: number;
+  current: number;
+}
