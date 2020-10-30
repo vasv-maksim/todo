@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { toggleDoneAction } from '../store/todo.action';
@@ -8,6 +8,7 @@ import { Task } from '../store/todo.models';
   selector: 'todo-done',
   templateUrl: './done.component.html',
   styleUrls: ['./done.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DoneComponent implements OnInit {
   @Input() task: Task;

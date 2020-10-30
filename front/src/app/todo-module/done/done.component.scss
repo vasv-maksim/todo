@@ -1,8 +1,25 @@
+// Глобальные стили
 @import "../../../styles-vars/theme_variables";
 
 .done {
   margin-top: 2px;
   &__checkbox {
     color: $DarkYellow;
+  }
+}
+
+.mat-checkbox-checked.mat-accent {
+  .mat-checkbox-ripple .mat-ripple-element {
+    background-color: $DarkYellow !important;
+  }
+
+.mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: $DarkYellow;
+  }
+}
+
+.mat-checkbox.mat-accent {
+  .mat-checkbox-ripple .mat-ripple-element {
+    background-color: $DarkYellow !important;
   }
 }
