@@ -6,6 +6,7 @@ import {
   dropTaskAction,
   deleteTaskAction,
   editTaskAction,
+  toggleDoneAction,
 } from './todo.action';
 import { Task, SwapIndexes } from './todo.models';
 
@@ -65,6 +66,16 @@ const todoReducer = createReducer(
       draftState.forEach(x => {
         if (x.id === task.id) {
           x.name = task.name;
+        }
+      });
+    });
+    return nextState;
+  }),
+  on(toggleDoneAction, (state: Task[], task: Task) => {
+    const nextState = produce(state, draftState => {
+      draftState.forEach(x => {
+        if (x.id === task.id) {
+          x.done = !x.done;
         }
       });
     });

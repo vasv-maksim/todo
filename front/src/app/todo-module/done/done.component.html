@@ -1,0 +1,9 @@
+<div class="done">
+  <mat-checkbox 
+    matTooltip="Сделано"
+    class="done__checkbox"
+    [checked]="task.done"
+    [color]="'warn'"
+    (change)="doneTask()">
+  </mat-checkbox>
+</div>

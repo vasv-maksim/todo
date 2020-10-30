@@ -1,0 +1,8 @@
+@import "../../../styles-vars/theme_variables";
+
+.done {
+  margin-top: 2px;
+  &__checkbox {
+    color: $DarkYellow;
+  }
+}

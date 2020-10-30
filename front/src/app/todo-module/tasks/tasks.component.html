@@ -2,6 +2,7 @@
   <div class="tasks__task" *ngFor="let task of tasks" cdkDrag>
     {{task.name}}
     <div class="tasks__buttons">
+      <todo-done [task]="task"></todo-done>
       <todo-edit [task]="task"></todo-edit>
       <todo-delete [task]="task"></todo-delete>
     </div>
