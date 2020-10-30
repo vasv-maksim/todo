@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { MaterialModule } from '../material-module/material.module';
 import { SharedModule } from '../shared-module/shared.module';
@@ -36,6 +37,7 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature('todo', reducer),
+    EffectsModule.forFeature([]),
   ],
   exports: [TodoComponent],
 })
