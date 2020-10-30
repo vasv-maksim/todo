@@ -1,0 +1,14 @@
+<div class="dialog">
+    <div class="dialog__title">Редактировать задачу</div>
+    <div mat-dialog-content>
+    <p class="dialog__text">Новое имя:</p>
+    <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input class="dialog__input" matInput [(ngModel)]="taskName">
+    </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="dialog__buttons">
+        <button mat-button  cdkFocusInitial (click)="deleteTask()">Ok</button>
+        <button mat-button (click)="cancel()">Отмена</button>
+    </div>
+</div>

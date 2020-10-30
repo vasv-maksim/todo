@@ -1,6 +1,12 @@
 import { createReducer, on, Action } from '@ngrx/store';
+import produce from 'immer';
 
-import { addTaskAction, dropTaskAction, deleteTaskAction } from './todo.action';
+import {
+  addTaskAction,
+  dropTaskAction,
+  deleteTaskAction,
+  editTaskAction,
+} from './todo.action';
 import { Task, SwapIndexes } from './models';
 
 export const initialState: Task[] = [
@@ -54,6 +60,16 @@ export const initialState: Task[] = [
 const todoReducer = createReducer(
   initialState,
   on(addTaskAction, (state: Task[], task: Task) => [...state, task]),
+  on(editTaskAction, (state: Task[], task: Task) => {
+    const nextState = produce(state, draftState => {
+      draftState.forEach(x => {
+        if (x.id === task.id) {
+          x.name = task.name;
+        }
+      });
+    });
+    return nextState;
+  }),
   on(deleteTaskAction, (state: Task[], task: Task) => [
     ...state.filter((x: Task) => x.id !== task.id),
   ]),
@@ -70,15 +86,15 @@ const todoReducer = createReducer(
 
     const target = state[from];
     const delta = to < from ? -1 : 1;
-    const proxyState = [...state];
+    const nextState = [...state];
 
     for (let i = from; i !== to; i += delta) {
-      proxyState[i] = proxyState[i + delta];
+      nextState[i] = nextState[i + delta];
     }
 
-    proxyState[to] = target;
+    nextState[to] = target;
 
-    return proxyState;
+    return nextState;
   }),
 );
 

@@ -7,6 +7,7 @@ export const deleteTaskAction = createAction(
   '[TODO DELETE] DELETE',
   props<Task>(),
 );
+export const editTaskAction = createAction('[TODO EDIT] EDIT', props<Task>());
 export const dropTaskAction = createAction(
   '[TODO Task] DROP',
   props<SwapIndexes>(),

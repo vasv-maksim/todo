@@ -12,6 +12,8 @@ import { AddComponent } from './add/add.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 const routes: Routes = [
   { path: '', component: TodoComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
     AddDialogComponent,
     DeleteDialogComponent,
     DeleteComponent,
+    EditComponent,
+    EditDialogComponent,
   ],
   imports: [
     MaterialModule,
