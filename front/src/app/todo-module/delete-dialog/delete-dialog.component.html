@@ -1,0 +1,10 @@
+<div class="dialog">
+    <div class="dialog__title">Удалить задачу</div>
+    <div mat-dialog-content>
+    <p class="dialog__text">{{this.data.name}}</p>
+    </div>
+    <div mat-dialog-actions class="dialog__buttons">
+        <button mat-button  cdkFocusInitial (click)="deleteTask()">Ok</button>
+        <button mat-button (click)="cancel()">Отмена</button>
+    </div>
+</div>

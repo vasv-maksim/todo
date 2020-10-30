@@ -10,6 +10,8 @@ import { TasksComponent } from './tasks/tasks.component';
 import { reducer } from './store/todo.reducer';
 import { AddComponent } from './add/add.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { DeleteComponent } from './delete/delete.component';
 
 const routes: Routes = [
   { path: '', component: TodoComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
     TasksComponent,
     AddComponent,
     AddDialogComponent,
+    DeleteDialogComponent,
+    DeleteComponent,
   ],
   imports: [
     MaterialModule,

@@ -1,0 +1,23 @@
+@import "../../../styles-vars/theme_variables";
+
+.dialog {
+  &__title {
+    color: $DarkYellow;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__text {
+    padding-top: 10px;
+    color: $DarkYellow;
+    font-size: 14px;
+  }
+
+  &__input {
+    color: $DarkYellow;
+  }
+
+  &__buttons {
+    color: $DarkYellow;
+  }
+}

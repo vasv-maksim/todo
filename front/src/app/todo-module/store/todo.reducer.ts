@@ -1,6 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
 
-import { addTaskAction, dropTaskAction } from './todo.action';
+import { addTaskAction, dropTaskAction, deleteTaskAction } from './todo.action';
 import { Task, SwapIndexes } from './models';
 
 export const initialState: Task[] = [
@@ -54,6 +54,9 @@ export const initialState: Task[] = [
 const todoReducer = createReducer(
   initialState,
   on(addTaskAction, (state: Task[], task: Task) => [...state, task]),
+  on(deleteTaskAction, (state: Task[], task: Task) => [
+    ...state.filter((x: Task) => x.id !== task.id),
+  ]),
   on(dropTaskAction, (state: Task[], swap: SwapIndexes) => {
     const { previous, current } = swap;
     const clamp = (value: number, max: number): number =>
