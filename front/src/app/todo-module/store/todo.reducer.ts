@@ -7,7 +7,7 @@ import {
   deleteTaskAction,
   editTaskAction,
 } from './todo.action';
-import { Task, SwapIndexes } from './models';
+import { Task, SwapIndexes } from './todo.models';
 
 export const initialState: Task[] = [
   {

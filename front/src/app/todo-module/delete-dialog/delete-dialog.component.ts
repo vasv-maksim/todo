@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { deleteTaskAction } from '../store/todo.action';
-import { Task } from '../store/models';
+import { Task } from '../store/todo.models';
 
 @Component({
   selector: 'todo-delete-dialog',

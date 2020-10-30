@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { selectTodo } from '../store/selectors';
+import { selectTodo } from '../store/todo.selectors';
 import { dropTaskAction } from '../store/todo.action';
-import { Task, SwapIndexes } from '../store/models';
+import { Task, SwapIndexes } from '../store/todo.models';
 
 @Component({
   selector: 'todo-tasks',

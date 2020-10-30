@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Task, SwapIndexes } from './models';
+import { Task, SwapIndexes } from './todo.models';
 
 export const addTaskAction = createAction('[TODO ADD] ADD', props<Task>());
 export const deleteTaskAction = createAction(

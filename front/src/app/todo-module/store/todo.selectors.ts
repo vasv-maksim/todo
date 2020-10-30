@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 
-import { Task } from './models';
+import { Task } from './todo.models';
 
 const selectFeature = state => state;
 

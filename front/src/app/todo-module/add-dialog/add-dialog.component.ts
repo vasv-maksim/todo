@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { v4 as uuid } from 'uuid';
 
 import { addTaskAction } from '../store/todo.action';
-import { Task } from '../store/models';
+import { Task } from '../store/todo.models';
 
 @Component({
   selector: 'todo-add-dialog',
