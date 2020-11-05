@@ -1,7 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
+    "paths": {
+      "@todo/*": ["app/todo-module/*"],
+      "@material/*": ["app/material-module/*"],
+      "@shared/*": ["app/shared-module/*"],
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

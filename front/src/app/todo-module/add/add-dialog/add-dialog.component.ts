@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { MatDialogRef } from '@angular/material/dialog';
 import { v4 as uuid } from 'uuid';
 
-import { addTaskAction } from '../store/todo.action';
-import { Task } from '../store/todo.models';
+import { addTaskAction } from '../../store/todo.action';
+import { Task } from '../../store/todo.models';
 
 @Component({
   selector: 'todo-add-dialog',

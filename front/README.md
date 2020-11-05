@@ -29,7 +29,7 @@ Angular2, версия 10+.
 Запустить Карму: `npm run test`
 
 ## Стилизация
-UIkit: MaterialUI, тема Deep Purple/Amber;
+UIkit: MaterialUI;
 
 Шрифт: Roboto;
 

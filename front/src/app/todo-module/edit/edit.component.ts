@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { Task } from '../store/todo.models';
 
 @Component({
